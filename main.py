@@ -1,5 +1,7 @@
 import sys, logging, os, random, math, open_color, arcade
-
+https://opengameart.org/sites/default/files/AlienSpaceShipInvasion_0.zip
+https://opengameart.org/sites/default/files/hjm-retro_aircraft_0.zip
+https://opengameart.org/sites/default/files/space_ships.zip
 #check to make sure we are running the right version of Python
 version = (3,7)
 assert sys.version_info >= version, "This script requires at least Python {0}.{1}".format(version[0],version[1])
@@ -11,7 +13,7 @@ logger = logging.getLogger(__name__)
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 MARGIN = 30
-SCREEN_TITLE = "Space shooter"
+SCREEN_TITLE = "Space shooter" 
 
 NUM_ENEMIES = 10
 STARTING_LOCATION = (400,100)
