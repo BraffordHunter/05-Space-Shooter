@@ -1,7 +1,5 @@
 import sys, logging, os, random, math, open_color, arcade
-https://opengameart.org/sites/default/files/AlienSpaceShipInvasion_0.zip
-https://opengameart.org/sites/default/files/hjm-retro_aircraft_0.zip
-https://opengameart.org/sites/default/files/space_ships.zip
+
 #check to make sure we are running the right version of Python
 version = (3,7)
 assert sys.version_info >= version, "This script requires at least Python {0}.{1}".format(version[0],version[1])
@@ -76,7 +74,7 @@ class Window(arcade.Window):
         self.enemy_list = arcade.SpriteList()
         self.player = Player()
         self.score = 0
-        
+
     def setup(self):
         '''
         Set up enemies
