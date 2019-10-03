@@ -76,7 +76,7 @@ class Window(arcade.Window):
         self.enemy_list = arcade.SpriteList()
         self.player = Player()
         self.score = 0
-
+        
     def setup(self):
         '''
         Set up enemies
