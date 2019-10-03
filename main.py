@@ -1,5 +1,6 @@
 import sys, logging, os, random, math, open_color, arcade
-
+https://opengameart.org/sites/default/files/AlienSpaceShipInvasion_0.zip 
+https://opengameart.org/sites/default/files/space_ships.zip
 #check to make sure we are running the right version of Python
 version = (3,7)
 assert sys.version_info >= version, "This script requires at least Python {0}.{1}".format(version[0],version[1])
@@ -44,16 +45,16 @@ class Bullet(arcade.Sprite):
     
 class Player(arcade.Sprite):
     def __init__(self):
-        super().__init__("assets/narwhal.png", 0.5)
+        super().__init__("downloads/TM_7.png", 0.5)
         (self.center_x, self.center_y) = STARTING_LOCATION
 
 class Enemy(arcade.Sprite):
     def __init__(self, position):
         '''
-        initializes a penguin enemy
+        initializes an alien spaceship enemy
         Parameter: position: (x,y) tuple
         '''
-        super().__init__("assets/penguin.png", 0.5)
+        super().__init__("downloads/alien_spaceship_invasion_7.png", 0.5)
         self.hp = ENEMY_HP
         (self.center_x, self.center_y) = position
 
