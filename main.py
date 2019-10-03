@@ -45,7 +45,7 @@ class Bullet(arcade.Sprite):
     
 class Player(arcade.Sprite):
     def __init__(self):
-        super().__init__("downloads/TM_7.png", 0.5)
+        super().__init__("downloads/TM_7.png", 2)
         (self.center_x, self.center_y) = STARTING_LOCATION
 
 class Enemy(arcade.Sprite):
