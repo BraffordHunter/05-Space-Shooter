@@ -1,9 +1,10 @@
 import sys, logging, os, random, math, open_color, arcade
-https://opengameart.org/sites/default/files/AlienSpaceShipInvasion_0.zip 
-https://opengameart.org/sites/default/files/space_ships.zip
+
+#https://opengameart.org/sites/default/files/AlienSpaceShipInvasion_0.zip 
+#https://opengameart.org/sites/default/files/space_ships.zip
 #check to make sure we are running the right version of Python
 version = (3,7)
-assert sys.version_info >= version, "This script requires at least Python {0}.{1}".format(version[0],version[1])
+assert sys.version_info >= version, "This script requires at least Python {3}.{1}".format(version[0],version[1])
 
 #turn on logging, in case we have to leave ourselves debugging messages
 logging.basicConfig(format='[%(filename)s:%(lineno)d] %(message)s', level=logging.DEBUG)
@@ -15,21 +16,21 @@ MARGIN = 30
 SCREEN_TITLE = "Space shooter" 
 
 NUM_ENEMIES = 10
-STARTING_LOCATION = (300,200)
+STARTING_LOCATION = (200,100)
 BULLET_DAMAGE = 20
 ENEMY_HP = 100
 HIT_SCORE = 20
 KILL_SCORE = 100
 
 class Bullet(arcade.Sprite):
-    def __init__(self, position, velocity, damage):
+    def __init__(self, position, velocity, damage, image):
         ''' 
         initializes the bullet
         Parameters: position: (x,y) tuple
             velocity: (dx, dy) tuple
             damage: int (or float)
         '''
-        super().__init__("assets/bullet.png", 0.5)
+        super().__init__(image, 2)
         (self.center_x, self.center_y) = position
         (self.dx, self.dy) = velocity
         self.damage = damage
@@ -45,7 +46,7 @@ class Bullet(arcade.Sprite):
     
 class Player(arcade.Sprite):
     def __init__(self):
-        super().__init__("downloads/TM_7.png", 2)
+        super().__init__("assets/TM_7.png", 0.5)
         (self.center_x, self.center_y) = STARTING_LOCATION
 
 class Enemy(arcade.Sprite):
@@ -54,7 +55,7 @@ class Enemy(arcade.Sprite):
         initializes an alien spaceship enemy
         Parameter: position: (x,y) tuple
         '''
-        super().__init__("downloads/alien_spaceship_invasion_7.png", 0.5)
+        super().__init__("assets/alien_spaceship_invasion_7.png", 0.7)
         self.hp = ENEMY_HP
         (self.center_x, self.center_y) = position
 
@@ -81,10 +82,11 @@ class Window(arcade.Window):
         Set up enemies
         '''
         for i in range(NUM_ENEMIES):
-            x = 120 * (i+1) + 40
-            y = 500
+            y = 120 * (i+1) + 40
+            x = 500
             enemy = Enemy((x,y))
-            self.enemy_list.append(enemy)            
+            self.enemy_list.append(enemy)
+                    
 
     def update(self, delta_time): 
         self.bullet_list.update()
@@ -109,13 +111,22 @@ class Window(arcade.Window):
         '''
         The player moves left and right with the mouse, The player shoots bullets with the mouse.
         '''
-        self.player.center_x = x
+        self.player.center_y = y
 
     def on_mouse_press(self, x, y, button, modifiers):
         if button == arcade.MOUSE_BUTTON_LEFT:
             x = self.player.center_x
             y = self.player.center_y + 15
-            bullet = Bullet((x,y),(0,10),BULLET_DAMAGE)
+            bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/sword1.png")
+            self.bullet_list.append(bullet)
+            y = self.player.center_x
+            x = self.player.center_y + 15
+            bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/sword1.png")
+            self.bullet_list.append(bullet)
+        if button == arcade.MOUSE_BUTTON_RIGHT:
+            x = self.player.center_x
+            y = self.player.center_y + 15
+            bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/Fireball2.png")
             self.bullet_list.append(bullet)
 
 def main():
