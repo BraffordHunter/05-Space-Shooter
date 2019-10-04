@@ -15,7 +15,7 @@ SCREEN_HEIGHT = 600
 MARGIN = 30
 SCREEN_TITLE = "Space shooter" 
 
-NUM_ENEMIES = 10
+NUM_ENEMIES = 5
 STARTING_LOCATION = (200,100)
 BULLET_DAMAGE = 20
 ENEMY_HP = 100
@@ -128,7 +128,10 @@ class Window(arcade.Window):
             y = self.player.center_y + 15
             bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/Fireball2.png")
             self.bullet_list.append(bullet)
-
+            x = self.player.center_y
+            y = self.player.center_x + 15
+            bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/Fireball2.png")
+            self.bullet_list.append(bullet)
 def main():
     window = Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
     window.setup()
