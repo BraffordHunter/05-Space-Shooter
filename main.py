@@ -55,13 +55,9 @@ class Enemy(arcade.Sprite):
         initializes an alien spaceship enemy
         Parameter: position: (x,y) tuple
         '''
-        super().__init__("assets/alien_spaceship_invasion_7.png", 0.7)
+        super().__init__("assets/alien_spaceship_invasion_11.png", 0.7,)
         self.hp = ENEMY_HP
         (self.center_x, self.center_y) = position
-
-
-        
-
 
 class Window(arcade.Window):
 
