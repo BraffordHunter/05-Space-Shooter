@@ -1,0 +1,41 @@
+Name: Nick Jones
+Date: 10/18/2019
+Project: 05 Space Shooter
+Peer's repository: https://github.com/BraffordHunter/05-Space-Shooter
+
+
+What is something you learned by reviewing your peer's project?
+I learned how to take right click input, I haven't done that yet. 
+
+ 
+
+What is something you saw in your peer's project that you would like to apply to your own programming projects?
+Having two types of guns was a cool idea, switching between swords and fireballs was fun.
+
+
+What suggestions would you have for your peer to improve his/her code?
+I think they lost track of what variables they were using a little in the mouse update section. I was confused
+for a minute why sometimes the bullets don't come out of the ship but appear below it, and assuming it wasn't
+intentional they just swapped y and x for the section on the second bullet. Similar problem for the fireball 
+weapon, but there the problem was that center_x was referenced in place of center_y and vice versa. These two
+pieces of code produce the same effect for the bullets though, so it may have been intentional. If they did 
+want the bullets to come out of the ship one thing they could do is make the second bullet have a lower y value
+than the first, which I implemented here as an example.
+
+What could have been clearer or better commented?
+I think the comments are fine, probably most people familiar with python arcade wouldn't have trouble reading
+it. 
+
+Was there anything in the code that was confusing to you? If so, what?
+I was linked a different repository that didn't have a game in it, but I did eventually find the one I linked 
+above which did have the game, so I guess that was a little confusing. The code itself was pretty legible though.
+
+Does the repository contain an appropriate LICENSE?
+Yes it's signed and dated.
+
+What is something he/she could add to the README.md to make it more descriptive?
+I think it explains the game pretty well, and it says what to launch to play. 
+
+
+Pay a compliment to your peer based on the quality of his/her code.
+I like the double weapon idea, and shooting swords at aliens in space is pretty awesome. 

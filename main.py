@@ -112,11 +112,11 @@ class Window(arcade.Window):
     def on_mouse_press(self, x, y, button, modifiers):
         if button == arcade.MOUSE_BUTTON_LEFT:
             x = self.player.center_x
-            y = self.player.center_y + 15
+            y = self.player.center_y + 45
             bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/sword1.png")
             self.bullet_list.append(bullet)
-            y = self.player.center_x
-            x = self.player.center_y + 15
+            x = self.player.center_x
+            y = self.player.center_y - 45
             bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/sword1.png")
             self.bullet_list.append(bullet)
         if button == arcade.MOUSE_BUTTON_RIGHT:
@@ -124,8 +124,8 @@ class Window(arcade.Window):
             y = self.player.center_y + 15
             bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/Fireball2.png")
             self.bullet_list.append(bullet)
-            x = self.player.center_y
-            y = self.player.center_x + 15
+            x = self.player.center_x
+            y = self.player.center_y
             bullet = Bullet((x,y),(10,0),BULLET_DAMAGE,"assets/Fireball2.png")
             self.bullet_list.append(bullet)
 def main():
